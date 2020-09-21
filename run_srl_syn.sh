@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+python src/main.py train \
+ --model-path-base models/joint \
+ --epochs 150 \
+ --joint-srl-dep \
+ --joint-srl-span \
+ --joint-syn-const \
+ --joint-syn-dep \
+ --use-words \
+ --use-chars-lstm \
+ --use-tags \
+ --use-cat \
+ --use-span-ff \
+ --d-verb 512 \
+ --d-span 512 \
+ --labmda-verb 0.4 \
+ --labmda-span 0.6 \
+ --max-num-span 300 \
+ --max-num-verb 30 \
+ --num-layers 12 \
+ --num-heads 8 \
+ --dataset ptb \
+ --embedding-path data/glove.gz \
+ --model-name joint \
+ --embedding-type glove \
+ --checks-per-epoch 2
